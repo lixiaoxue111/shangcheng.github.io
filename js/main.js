@@ -3,7 +3,10 @@
 $('.skin li').on('click',function () {
     $(this).addClass('select').siblings().removeClass('select');
     $('.nav').attr('class','nav skin'+$(this).index());
+    setCookie('skin',$(this).index(),0);
 });
+var index=getCookie('skin');
+$('.skin li').eq(index).trigger('click');
 /* 换肤结束*/
 /* hot开始*/
 $(function () {
