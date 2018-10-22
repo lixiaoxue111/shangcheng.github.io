@@ -5,7 +5,12 @@ $('.skin li').on('click',function () {
     $('.nav').attr('class','nav skin'+$(this).index());
 });
 /* 换肤结束*/
-/* slide start */
+/* hot开始*/
+$(function () {
+    $('.cata-info .promoted').append('<s class="hot"></s>')
+});
+/* hot结束*/
+/* 轮播图开始 */
 var count=0;
 var timer;
 function change(idx) {
@@ -32,29 +37,31 @@ $('.slide').on('mouseover',function () {
     run();
 });
 
-/* slide end */
+/* 轮播图结束 */
 
 /*最新动态开始*/
-var $title = '';
-
-$('.notice-info li a').on('mouseover',function(e){
-    //$title = $(this).attr('title');
-    this.myTitle = $(this).attr('title');
-    $('<div class="tip">'+this.myTitle+'</div>').appendTo('body').offset({
-        left:e.pageX +20,
-        top:e.pageY+20,
+$(function(){
+    var x = 20;
+    var y = 20;
+    $("a.tooltip").mouseover(function(e){
+        this.myTitle = this.title;
+        this.title = "";
+        var tooltip = "<div id='tooltip'>"+ this.myTitle +"</div>"; //创建 div 元素
+        $("body").append(tooltip);	//把它追加到文档中
+        $("#tooltip")
+            .css({
+                "top": (e.pageY+y) + "px",
+                "left": (e.pageX+x)  + "px"
+            }).show("fast");	  //设置x坐标和y坐标，并且显示
+    }).mouseout(function(){
+        this.title = this.myTitle;
+        $("#tooltip").remove();   //移除
+    }).mousemove(function(e){
+        $("#tooltip")
+            .css({
+                "top": (e.pageY+y) + "px",
+                "left": (e.pageX+x)  + "px"
+            });
     });
-    $(this).attr('title','');
-}).on('mousemove',function(e){
-    $('.tip').offset({
-        left:e.pageX +20,
-        top:e.pageY+20
-    });
-}).on('mouseout',function(){
-    $('.tip').remove();
-    //$(this).attr('title',$title);
-    $(this).attr('title',this.myTitle);
-
 });
-
 /*最新动态结束*/
