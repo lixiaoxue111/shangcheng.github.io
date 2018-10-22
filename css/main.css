@@ -181,6 +181,7 @@ a{
     height: 24px;
     line-height: 24px;
     color: #AEADAE;
+    position: relative;
 }
 .cata-info ul li a{
     color: #444444;
@@ -188,6 +189,13 @@ a{
 }
 .cata-info .promoted{
     color: red;
+}
+.cata-info .hot{
+    background: url(../images/hot.gif) no-repeat scroll 0 0 transparent;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    width: 21px;
 }
 .cata-info ul li a:hover{
     color: #008CD7;
@@ -293,6 +301,15 @@ a{
 .notice-info ul a:hover{
     color: blue;
 }
+#tooltip{
+    position:absolute;
+    border:1px solid #333;
+    background:#f7f5d1;
+    padding:1px;
+    color:#333;
+    display:none;
+    font-size: 12px;
+}
 /* notice  end  */
 /* brand start */
 .brand{
@@ -363,3 +380,5 @@ footer{
     margin-top: 15px;
 }
 /* footer end  */
+
+
