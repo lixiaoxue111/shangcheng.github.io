@@ -15,7 +15,7 @@ a{
     display: block;
 }
 /* reset  end */
-/*  header  start */
+/*  头部  start */
 .header{
     height: 105px;
     background: url("../images/headerbg.png");
@@ -93,7 +93,7 @@ a{
 }
 
 /*切换皮肤结束*/
-/*  nav start */
+/*  导航 start */
 .nav{
     position: absolute;
     bottom: 0;
@@ -136,11 +136,78 @@ a{
 .nav li a:hover{
     text-decoration: underline;
 }
-/* nav end */
-/*  header  end  */
+.nav .jnNav{
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid #B1B1B1;
+    border-top: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 37px;
+    width: 474px;
+    z-index: 1000;
+}
+.jnNav .subitem {
+    float: left;
+    height: auto !important;
+    min-height: 100px;
+    padding: 10px 12px;
+    width: 450px
+}
 
-/* content  start  */
-/*  catalog  start  */
+
+.jnNav .subitem .fore {
+    border-top-style: none;
+    padding-top: 0;
+}
+.jnNav .subitem dl {
+    border-top: 1px dashed #C4C4C4;
+    overflow: hidden;
+    padding: 8px 0;
+    float: left;
+}
+.jnNav .subitem dt a {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 0;
+}
+.jnNav .subitem em {
+    border-right: 1px solid #CCCCCC;
+    float: left;
+    font-style: normal;
+    height: 14px;
+    line-height: 14px;
+    margin: 5px 0;
+    padding: 0 8px;
+}
+.jnNav .subitem dt {
+    float: left;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 4px 3px;
+    text-align: center;
+    width: 76px;
+}
+.jnNav .subitem em a {
+    color: #666666;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
+}
+.jnNav .subitem dd {
+    float: left;
+    overflow: hidden;
+    padding: 0;
+    width: 364px;
+}
+
+/* 导航 end */
+/*  头部  end  */
+
+/* 主体  start  */
+/*  左侧商品分类  start  */
 .content .wrap{
     padding: 10px 0;
     position: relative;
@@ -200,8 +267,8 @@ a{
 .cata-info ul li a:hover{
     color: #008CD7;
 }
-/* catalog  end */
-/* slide start  */
+/* 左侧商品分类  end */
+/* 图片轮播 start  */
 .slide{
     float: left;
     height: 320px;
@@ -218,6 +285,8 @@ a{
     position: absolute;
     top: 0;
     left: 0;
+    width: 550px;
+    height: 321px;
 }
 .img-box img:first-of-type{
     z-index: 1;
@@ -257,8 +326,8 @@ a{
     overflow: hidden;
     width: 79px;
 }
-/* slide end  */
-/* notice  start  */
+/* 图片轮播 end  */
+/* 最新动态  start  */
 .notice{
     position: absolute;
     top: 10px;
@@ -310,8 +379,8 @@ a{
     display:none;
     font-size: 12px;
 }
-/* notice  end  */
-/* brand start */
+/* 最新动态  end  */
+/* 品牌活动 start */
 .brand{
     position: absolute;
     top:330px ;
@@ -337,6 +406,14 @@ a{
     float: left;
     margin-left: 10px;
 }
+.brand-tab li.b-chos{
+    background: url("../images/chos.gif") no-repeat scroll 50% bottom transparent;
+    padding-bottom: 3px;
+ }
+.brand-tab li.b-chos a{
+    background: #FA5889;
+    color: #fff;
+}
 .brand-tab ul li a{
     display: inline-block;
     font-size: 12px;
@@ -345,6 +422,16 @@ a{
     height: 20px;
     line-height: 20px;
     padding: 0 10px;
+}
+.brand-content{
+    width: 790px;
+    overflow: hidden;
+    position: relative;
+    height: 188px;
+}
+.brand-list{
+    width: 3200px;
+    position: absolute;
 }
 .brand-list li{
     float: left;
@@ -367,9 +454,9 @@ a{
     width: 183px;
     text-align: center;
 }
-/* brand end */
-/* content  end  */
-/* footer start */
+/* 品牌活动 end */
+/* 主体  end  */
+/* 底部 start */
 footer{
     width: 990px;
     color: #666;
@@ -379,6 +466,6 @@ footer{
     font-size: 12px;
     margin-top: 15px;
 }
-/* footer end  */
+/* 底部 end  */
 
 
