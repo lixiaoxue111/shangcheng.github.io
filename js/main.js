@@ -8,6 +8,15 @@ $('.skin li').on('click',function () {
 var index=getCookie('skin');
 $('.skin li').eq(index).trigger('click');
 /* 换肤结束*/
+/*导航效果 开始*/
+$(function () {
+   $('.nav li').hover(function () {
+       $(this).find('.jnNav').show();
+   },function () {
+      $(this).find('.jnNav').hide();
+   })
+});
+/*导航效果 结束*/
 /* hot开始*/
 $(function () {
     $('.cata-info .promoted').append('<s class="hot"></s>')
@@ -42,7 +51,7 @@ $('.slide').on('mouseover',function () {
 
 /* 轮播图结束 */
 
-/*最新动态开始*/
+/*最新动态 超链接文字提示  开始*/
 $(function(){
     var x = 20;
     var y = 20;
@@ -67,4 +76,22 @@ $(function(){
             });
     });
 });
-/*最新动态结束*/
+/*最新动态 超链接文字提示 结束*/
+
+/*品牌活动品牌活动模块横向滚动 开始*/
+$(function () {
+    $('.brand-tab li a').click(function () {
+        $(this).parent().addClass('b-chos').siblings().removeClass('b-chos');
+        var idx=$('.brand-tab li a').index(this);
+        brandList(idx);
+        return false;
+    })
+});
+
+function brandList(index) {
+    var $rollobj=$('.brand-list');
+    var rollWidth = $rollobj.find("li").outerWidth();
+    rollWidth = rollWidth * 4; //一个版面的宽度
+    $rollobj.stop(true,false).animate({ left : -rollWidth*index},1000); // 需要定位
+}
+/*品牌活动活动品牌活动模块横向滚动 结束*/
